@@ -13,6 +13,7 @@ use App\MerchMaterial;
 use App\ImpulsoRegistro;
 use App\MercaderismoRegistro;
 use App\MerchMaterialFlow;
+use App\Tienda;
 use Carbon\Carbon;
 use Carbon\CarbonPeriod;
 
@@ -39,6 +40,12 @@ class ApiController extends Controller
         ]);
       }
     }
+  }
+
+
+  public function tiendas(){
+    $tiendas = Tienda::all();
+    return $tiendas;
   }
 
 

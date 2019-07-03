@@ -15,7 +15,8 @@ use Illuminate\Http\Request;
 
 Route::post('/login','ApiController@login');
 Route::get('/workers','ApiController@workers');
-Route::get('/businesses', 'ApiController@businesses');
+Route::get('/tiendas', 'ApiController@tiendas');
+
 Route::get('/products', 'ApiController@products');
 Route::get('/products_competencia', 'ApiController@productsCompetencia');
 Route::get('/pop_materials', 'ApiController@popMaterials');
