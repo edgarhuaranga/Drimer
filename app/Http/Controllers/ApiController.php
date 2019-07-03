@@ -14,6 +14,7 @@ use App\ImpulsoRegistro;
 use App\MercaderismoRegistro;
 use App\MerchMaterialFlow;
 use App\Tienda;
+use App\Producto;
 use Carbon\Carbon;
 use Carbon\CarbonPeriod;
 
@@ -48,6 +49,10 @@ class ApiController extends Controller
     return $tiendas;
   }
 
+  public function productos(){
+    $productos = Producto::all();
+    return $productos;
+  }
 
   public function products(){
     $products = Product::all()->where('segmento_x_marca','Rintisa')->groupBy(['categoria','marca','nombre']);
