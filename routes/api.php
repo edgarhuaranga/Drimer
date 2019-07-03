@@ -17,6 +17,7 @@ Route::post('/login','ApiController@login');
 Route::get('/workers','ApiController@workers');
 Route::get('/tiendas', 'ApiController@tiendas');
 Route::get('/productos', 'ApiController@productos');
+Route::get('/gestion', 'ApiController@gestion');
 
 Route::get('/products', 'ApiController@products');
 Route::get('/products_competencia', 'ApiController@productsCompetencia');

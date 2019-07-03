@@ -15,6 +15,7 @@ use App\MercaderismoRegistro;
 use App\MerchMaterialFlow;
 use App\Tienda;
 use App\Producto;
+use App\Gestion;
 use Carbon\Carbon;
 use Carbon\CarbonPeriod;
 
@@ -45,13 +46,34 @@ class ApiController extends Controller
 
 
   public function tiendas(){
-    $tiendas = Tienda::all();
+
+    $promotor = Promotor::find(request('worker_id'));
+
+    if($promotor->rol == 'Promotor'){
+        $tiendas = Tienda::where('id', $promotor->tienda_id)->get();
+    }
+    else{
+        $tiendas = Tienda::where('id', $promotor->tienda_id)->get
+        $tiendas = Tienda::all();
+    }
+
     return $tiendas;
   }
 
   public function productos(){
     $productos = Producto::all();
     return $productos;
+  }
+
+  public function gestion(){
+    $gestion = new Gestion;
+    $gestion->tienda_id= request('tienda_id');
+    $gestion->producto_id= request('producto_id');
+    $gestion->cantidad= request('cantidad');
+    $gestion->monto_venta= request('monto_venta');
+    $gestion->comentarios= request('comentarios');
+
+    $gestion->save();
   }
 
   public function products(){
