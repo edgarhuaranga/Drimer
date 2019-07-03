@@ -17,17 +17,47 @@ class CadenasTableSeeder extends Seeder
     public function run()
     {
 
-        Cadena::create(['nombre'=>'No asignado']);
-        Cadena::create(['nombre'=>'Saga Fallabella']);
-        Cadena::create(['nombre'=>'Ripley']);
-        Cadena::create(['nombre'=>'Paris']);
-        Cadena::create(['nombre'=>'Oeschle']);
-
         User::create([
             'name' => 'Edgar Huaranga',
             'email' => 'edhu1227@gmail.com',
             'password' => Hash::make('huaranga14'),
         ]);
+
+        Cadena::create(['nombre'=>'Saga']);
+        Cadena::create(['nombre'=>'Ripley']);
+        Cadena::create(['nombre'=>'Paris']);
+        Cadena::create(['nombre'=>'Tottus']);
+        Cadena::create(['nombre'=>'Stylos']);
+        Cadena::create(['nombre'=>'Oeschle']);
+
+        Tienda::create(['cadena_id'=>'6', 'nombre_sede'=>' PRIMAVERA','direccion'=>'AV.AVIACION ESQ. CON PRIMAVERA S/N','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'6', 'nombre_sede'=>' CENTRO CÍVICO','direccion'=>'AV. INCA GARCILASO DE LA VEGA 1337','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'6', 'nombre_sede'=>' SALAVERRY','direccion'=>'AV.FELIPE SANTIAGO SALAVERRY CDRA.24 ','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'6', 'nombre_sede'=>' JIRÓN DE LA UNIÓN','direccion'=>'JIRÓN DE LA UNIÓN 600','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'6', 'nombre_sede'=>' JOCKEY PLAZA','direccion'=>'AV. JAVIER PRADO ESTE 4200 ','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'6', 'nombre_sede'=>' PLAZA LIMA NORTE','direccion'=>'AV.ALFREDO MENDIOLA 1400','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'6', 'nombre_sede'=>' SAN BORJA','direccion'=>'JR. VITTORE SCARPAZZA C. 241 ','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'6', 'nombre_sede'=>' MIRAFLORES','direccion'=>'PJE. LOS PINOS 140 ','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'6', 'nombre_sede'=>'MALL SUR','direccion'=>'AV LOS LIRIOS 301 ','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'6', 'nombre_sede'=>'LA CURVA','direccion'=>'CALLE 1RO DE MAYO S/N PUEBLO JOVEN ','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'1', 'nombre_sede'=>' SALAVERRY','direccion'=>'AV. GRAL. SALAVERRY 2370','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'1', 'nombre_sede'=>' JOCKEY PLAZA','direccion'=>'AV. JAVIER PRADO ESTE 4200','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'1', 'nombre_sede'=>' MIRAFLORES','direccion'=>'AV. AREQUIPA 5280','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'1', 'nombre_sede'=>' SAN ISIDRO','direccion'=>'AV. PASEO DE LA REPÚBLICA 3220','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'1', 'nombre_sede'=>' CENTRO CÍVICO','direccion'=>'AV INCA GARCILASO DE LA VEGA 1337','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'1', 'nombre_sede'=>' SAN MIGUEL','direccion'=>'AV. DE LA MARINA 2100','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'1', 'nombre_sede'=>' MEGAPLAZA','direccion'=>'AV INDUSTRIAL 3515','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'1', 'nombre_sede'=>' SANTA ANITA','direccion'=>'CARR. CENTRAL 111','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'1', 'nombre_sede'=>' LIMA NORTE','direccion'=>'CENTRO COMERCIAL PLAZA NORTE, AV. TOMAS VALLE','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'1', 'nombre_sede'=>' MALL DEL SUR','direccion'=>'AV LOS LIRIOS 301 ','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'1', 'nombre_sede'=>' ANGAMOS','direccion'=>'AV. ANGAMOS 1803','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'1', 'nombre_sede'=>'BELLAVISTA','direccion'=>'AV. OSCAR R. BENAVIDES 3866','ubigeo'=>'150101']);
+        Tienda::create(['cadena_id'=>'1', 'nombre_sede'=>' JIRÓN DE LA UNIÓN','direccion'=>'JIRÓN DE LA UNIÓN 517','ubigeo'=>'150101']);
+
+
+        
+
+
 
         $faker = Factory::create();
 
