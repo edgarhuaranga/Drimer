@@ -59,6 +59,12 @@
                     <span class="nav-main-link-name">Productos</span>
                 </a>
             </li>
+            <li class="nav-main-heading">Reportes</li>
+            <li class="nav-main-item">
+                <a class="nav-main-link" href="/ventas">
+                    <span class="nav-main-link-name">Reporte de ventas</span>
+                </a>
+            </li>
 
         </ul>
     </div>

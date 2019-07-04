@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-        <title>Aaldebaran</title>
+        <title>Drimer</title>
 
         <meta name="description" content="Dashmix - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
         <meta name="author" content="pixelcave">
@@ -52,7 +52,7 @@
                                     <a class="link-fx font-w700 font-size-h1" href="index.html">
                                         <span class="text-dark">Administrador</span>
                                     </a>
-                                    <p class="text-uppercase font-w700 font-size-sm text-muted">Ingreso Aaldebaran</p>
+                                    <p class="text-uppercase font-w700 font-size-sm text-muted">Ingreso Drimer</p>
                                 </div>
                                 <!-- END Header -->
 
@@ -89,11 +89,13 @@
                         <div class="hero-static col-md-6 d-none d-md-flex align-items-md-center justify-content-md-center text-md-center">
                             <div class="p-3">
                                 <p class="display-4 font-w700 text-white mb-3">
-                                    Hope
+                                    Control ventas
                                 </p>
+                                <!--
                                 <p class="font-size-lg font-w600 text-white-75 mb-0">
                                   Developed by &copy; <span class="js-year-copy">Edgar Huaranga</span>
                                 </p>
+                              -->
                             </div>
                         </div>
                         <!-- END Meta Info Section -->

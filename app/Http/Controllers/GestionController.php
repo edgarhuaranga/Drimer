@@ -12,9 +12,17 @@ class GestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+      $this->middleware('auth');
+    }
+
     public function index()
     {
-        //
+        $ventas = Gestion::all();
+
+        return view('gestion.index', compact('ventas'));
     }
 
     /**
@@ -35,7 +43,14 @@ class GestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $gestion = new Gestion;
+      $gestion->tienda_id= request('tienda_id');
+      $gestion->producto_id= request('producto_id');
+      $gestion->cantidad= request('cantidad');
+      $gestion->monto_venta= request('monto_venta');
+      $gestion->comentarios= request('comentarios');
+
+      $gestion->save();
     }
 
     /**

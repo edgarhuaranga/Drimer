@@ -56,3 +56,11 @@ Route::get('/productos/{producto}', 'ProductoController@show');
 Route::get('/productos/{producto}/editar', 'ProductoController@edit');
 Route::post('/productos/{producto}/actualizar', 'ProductoController@update');
 Route::get('/productos/{producto}/eliminar', 'ProductoController@destroy');
+
+Route::get('/ventas/crear', 'GestionController@create');
+Route::get('/ventas', 'GestionController@index');
+Route::post('/ventas', 'GestionController@store');
+Route::get('/ventas/{gestion}', 'GestionController@show');
+Route::get('/ventas/{gestion}/editar', 'GestionController@edit');
+Route::post('/ventas/{gestion}/actualizar', 'GestionController@update');
+Route::get('/ventas/{gestion}/eliminar', 'GestionController@destroy');
