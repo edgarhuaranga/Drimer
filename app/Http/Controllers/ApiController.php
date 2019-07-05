@@ -84,7 +84,7 @@ class ApiController extends Controller
     $ventas = Gestion::all();
     return response()->json([
           'requestType' => request('requestType'),
-          'data' => ApiAnswer::collection($ventas);
+          'data' => ApiAnswer::collection($ventas),
         ]);
   }
 
