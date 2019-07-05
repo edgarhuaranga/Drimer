@@ -27,7 +27,7 @@ class Gestion extends JsonResource
         'usuario' => $promotor->nombre_completo,
         'tienda' => $tienda->cadena()->nombre."-".$tienda->nombre_sede,
         'producto' => $producto->nombre,
-        'cantidad' => $producto->cantidad,
+        'cantidad' => $this->cantidad,
         'monto_unitario' => $this->monto_venta,
         'boleta' => $this->boleta,
       ];
