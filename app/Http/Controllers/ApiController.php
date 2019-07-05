@@ -72,7 +72,7 @@ class ApiController extends Controller
     $gestion->producto_id= request('producto_id');
     $gestion->cantidad= request('cantidad');
     $gestion->monto_venta= request('monto_venta');
-    $gestion->comentarios= request('comentarios');
+    $gestion->boleta= request('boleta');
 
     $gestion->save();
   }
