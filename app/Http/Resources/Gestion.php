@@ -2,6 +2,10 @@
 
 namespace App\Http\Resources;
 
+use App\Promotor;
+use App\Tienda;
+use App\Producto;
+
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class Gestion extends JsonResource
