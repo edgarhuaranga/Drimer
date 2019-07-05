@@ -64,3 +64,5 @@ Route::get('/ventas/{gestion}', 'GestionController@show');
 Route::get('/ventas/{gestion}/editar', 'GestionController@edit');
 Route::post('/ventas/{gestion}/actualizar', 'GestionController@update');
 Route::get('/ventas/{gestion}/eliminar', 'GestionController@destroy');
+
+Route::get('/exportarventas', 'GestionController@excel');

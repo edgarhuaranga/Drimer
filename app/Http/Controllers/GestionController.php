@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Gestion;
+use App\Exports\GestionVentasExport;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Concerns\FromView;
+use Maatwebsite\Excel\Facades\Excel;
+use Carbon\Carbon;
 
 class GestionController extends Controller
 {
@@ -13,10 +17,7 @@ class GestionController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct()
-    {
-      $this->middleware('auth');
-    }
+
 
     public function index()
     {
@@ -96,5 +97,11 @@ class GestionController extends Controller
     public function destroy(Gestion $gestion)
     {
         //
+    }
+
+    public function excel(){
+      //return view('gestion.index');
+      $hoy = Carbon::now()->toDateTimeString();
+      return Excel::download(new GestionVentasExport, 'ReporteVentas'.$hoy.'.xlsx');
     }
 }
