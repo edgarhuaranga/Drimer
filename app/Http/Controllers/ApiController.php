@@ -19,6 +19,8 @@ use App\Gestion;
 use Carbon\Carbon;
 use Carbon\CarbonPeriod;
 
+use App\Http\Resources\Gestion as ApiAnswer;
+
 
 class ApiController extends Controller
 {
@@ -76,6 +78,34 @@ class ApiController extends Controller
 
     $gestion->save();
   }
+
+
+  public function historico(){
+    $ventas = Gestion::all();
+    return response()->json([
+          'requestType' => request('requestType'),
+          'data' => ApiAnswer::collection($ventas);
+        ]);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   public function products(){
     $products = Product::all()->where('segmento_x_marca','Rintisa')->groupBy(['categoria','marca','nombre']);
