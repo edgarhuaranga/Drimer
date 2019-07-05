@@ -67,7 +67,7 @@ class ApiController extends Controller
 
   public function gestion(){
     $gestion = new Gestion;
-    $gestion->promotor_id = request('promotor_id');
+    $gestion->promotor_id = request('worker_id');
     $gestion->tienda_id= request('tienda_id');
     $gestion->producto_id= request('producto_id');
     $gestion->cantidad= request('cantidad');
