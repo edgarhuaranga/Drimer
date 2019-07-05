@@ -38,7 +38,7 @@
         {{$venta->promotor()->nombre_completo}}
       </td>
       <td class="d-none d-sm-table-cell text-center">
-        {{$venta->tienda()->cadena()->nombre()->nombre_completo}}
+        {{$venta->tienda()->cadena()->nombre}}
       </td>
       <td class="d-none d-sm-table-cell text-center">
         {{$venta->tienda()->nombre_sede}}
