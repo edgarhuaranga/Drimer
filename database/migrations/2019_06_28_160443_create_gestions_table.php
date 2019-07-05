@@ -15,11 +15,12 @@ class CreateGestionsTable extends Migration
     {
         Schema::create('gestions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('promotor_id');
             $table->string('tienda_id');
             $table->string('producto_id');
             $table->integer('cantidad');
             $table->float('monto_venta');
-            $table->string('comentarios');
+            $table->string('boleta');
             $table->timestamps();
         });
     }

@@ -28,25 +28,25 @@
                                           <table class="table table-bordered table-striped table-vcenter js-dataTable-buttons">
                                               <thead class="thead-dark">
                                                   <tr>
-                                                      <th class="text-center" style="width: 80px;">#</th>
+                                                      <th class="text-center" style="width: 80px;">Boleta</th>
                                                       <th class="d-none d-sm-table-cell" style="width: 15%;">Tienda</th>
+                                                      <th class="d-none d-sm-table-cell" style="width: 15%;">Promotor</th>
                                                       <th class="d-none d-sm-table-cell" style="width: 15%;">Producto</th>
                                                       <th class="d-none d-sm-table-cell" style="width: 15%;">Cantidad</th>
                                                       <th class="d-none d-sm-table-cell" style="width: 15%;">Precio unitario</th>
-                                                      <th class="d-none d-sm-table-cell" style="width: 15%;">Boleta</th>
                                                   </tr>
                                               </thead>
                                               <tbody>
                                                   @foreach($ventas as $venta)
                                                   <tr>
                                                       <td class="text-center">
-                                                          <a href="/ventas/{{$venta->id}}">{{$venta->id}}</a>
+                                                          <a href="/ventas/{{$venta->id}}">{{$venta->boleta}}</a>
                                                       </td>
                                                       <td>{{$venta->tienda()->cadena()->nombre."-".$venta->tienda()->nombre_sede}}</td>
+                                                      <td>{{$venta->promotor()->nombre_completo}}</td>
                                                       <td>{{$venta->producto()->nombre}}</td>
                                                       <td>{{$venta->cantidad}}</td>
                                                       <td>{{$venta->monto_venta}}</td>
-                                                      <td>{{$venta->comentarios}}</td>
 
                                                   </tr>
                                                   @endforeach
