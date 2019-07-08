@@ -49,17 +49,13 @@ class ApiController extends Controller
 
   public function tiendas(){
     $promotor = Promotor::find(request('worker_id'));
-
-    if($promotor->rol == 'Promotor'){
-      $tiendas = Tienda::where('id', $promotor->tienda_id)->get();
-    }
-    else{
-        $tiendas = Tienda::all();
-    }
-    return $tiendas;
+    return $promotor->tiendas();
   }
 
   public function productos(){
+
+    $promotor = Promotor::find(request('worker_id'));
+
     $productos = Producto::all();
     return $productos;
   }
