@@ -29,7 +29,7 @@ class Promotor extends Model
 
 
     public function productos(){
-      $cadena = $this->cadena;
+      $cadena = $this->cadena();
       return Producto::where('cadena_id', $cadena->id)->get();
     }
 }
