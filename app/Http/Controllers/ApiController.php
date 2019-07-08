@@ -53,11 +53,8 @@ class ApiController extends Controller
   }
 
   public function productos(){
-
     $promotor = Promotor::find(request('worker_id'));
-
-    $productos = Producto::all();
-    return $productos;
+    return $promotor->productos();
   }
 
   public function gestion(){

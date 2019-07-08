@@ -3,6 +3,7 @@
 namespace App;
 use App\Tienda;
 use App\Cadena;
+use App\Producto;
 use Illuminate\Database\Eloquent\Model;
 
 class Promotor extends Model
@@ -24,5 +25,11 @@ class Promotor extends Model
     public function cadena(){
       $tienda = Tienda::find($this->tienda_id);
       return $tienda->cadena();
+    }
+
+
+    public function productos(){
+      $cadena = $this->cadena;
+      return Producto::where('cadena_id', $cadena->id)->get();
     }
 }
