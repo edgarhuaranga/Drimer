@@ -17,7 +17,7 @@ class Promotor extends Model
       }
       elseif($this->rol == 'Promotor volante'){
         $cadena = $this->cadena();
-        return Tienda::where('cadena_id', $cadena->id);
+        return Tienda::where('cadena_id', $cadena->id)->get();
       }
     }
 
