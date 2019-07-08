@@ -48,7 +48,7 @@
                                             <label for="text-input-password">Tienda</label>
                                             <select class="form-control" id="tienda_id" name="tienda_id">
                                                 @foreach($tiendas as $tienda)
-                                                    <option value="{{$tienda->id}}">{{$tienda->cadena()."-".$tienda->nombre_sede->nombre}}</option>
+                                                    <option value="{{$tienda->id}}">{{$tienda->cadena()->nombre."-".$tienda->nombre_sede}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
