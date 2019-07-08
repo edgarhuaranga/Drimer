@@ -13,7 +13,7 @@ class Promotor extends Model
 
     public function tiendas(){
       if($this->rol == 'Promotor'){
-        return $this->tienda();
+        return Tienda::where('id',$this->tienda_id)->get();
       }
       elseif($this->rol == 'Promotor volante'){
         $cadena = $this->cadena();
