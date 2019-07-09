@@ -76,18 +76,20 @@ class ApiController extends Controller
 
 
   public function historico(){
-    $ventas = Gestion::all();
+    $promotor = Promotor::find(request('worker_id'));
+    $ventas = Gestion::selectRaw('boleta, cast(avg(tienda_id) as decimal) as tienda, count(id) as items')->where('promotor_id', $promotor->id)->groupBy('boleta')->get();
 
-    $cantidad = Gestion::all()->count();
+    $cantidad = $ventas->count();
     $monto_dia = 0;
-    foreach ($ventas as $venta) {
-      $monto_dia = $monto_dia + $venta->cantidad*$venta->monto_venta;
-    }
+    #foreach ($ventas as $venta) {
+    #  $monto_dia = $monto_dia + $venta->cantidad*$venta->monto_venta;
+    #}
 
     return response()->json([
           'cantidad_total' => $cantidad,
           'monto_total'=>$monto_dia,
-          'data' => ApiAnswer::collection($ventas),
+          'data'=>$ventas,
+          #'data' => ApiAnswer::collection($ventas),
         ]);
   }
 
