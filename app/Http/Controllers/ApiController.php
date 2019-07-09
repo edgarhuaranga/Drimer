@@ -95,7 +95,7 @@ class ApiController extends Controller
           'cantidad_total' => $cantidad,
           'monto_total'=>$monto_dia,
           'boletas'=>$boletas,
-          #'data' => ApiAnswer::collection($ventas),
+          'detalle' => ApiAnswer::collection($ventas),
         ]);
   }
 
