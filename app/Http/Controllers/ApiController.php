@@ -66,7 +66,12 @@ class ApiController extends Controller
     $gestion->monto_venta= request('monto_venta');
     $gestion->boleta= request('boleta');
 
-    $gestion->save();
+    $status = $gestion->save();
+
+    return response()->json([
+      'status'=> $status,
+      'id'=>$gestion->id,
+    ]);
   }
 
 
