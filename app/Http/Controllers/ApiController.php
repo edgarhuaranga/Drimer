@@ -82,7 +82,7 @@ class ApiController extends Controller
                         ->where('created_at', '>',Carbon::today())
                         ->groupBy('boleta')->get();
 
-    $ventas = Gestion::->where('promotor_id', $promotor->id)
+    $ventas = Gestion::where('promotor_id', $promotor->id)
                         ->where('created_at', '>',Carbon::today())->get();
 
     $cantidad = $boletas->count();
