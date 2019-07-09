@@ -20,4 +20,13 @@ class Gestion extends Model
     public function promotor(){
       return Promotor::find($this->promotor_id);
     }
+
+    public function fecha(){
+      return $this->created_at->format('d-m-Y');
+    }
+
+    public function hora(){
+      return $this->created_at->format('H:i:s');
+    }
+
 }
