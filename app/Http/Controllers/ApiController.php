@@ -93,7 +93,7 @@ class ApiController extends Controller
 
     $monto_mes = 0;
     $ventas_mes = Gestion::where('promotor_id', $promotor->id)
-                            ->whereMonth('created_at', '>', Carbon::now()->month)->get();
+                            ->whereMonth('created_at', Carbon::now()->month)->get();
     foreach ($ventas_mes as $venta) {
       $monto_mes = $monto_mes + $venta->cantidad*$venta->monto_venta;
     }
