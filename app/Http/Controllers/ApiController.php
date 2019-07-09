@@ -91,9 +91,17 @@ class ApiController extends Controller
       $monto_dia = $monto_dia + $venta->cantidad*$venta->monto_venta;
     }
 
+    $monto_mes = 0;
+    $ventas_mes = Gestion::where('promotor_id', $promotor->id)
+                            ->whereMonth('created_at', '>', Carbon::now()->month)->get();
+    foreach ($ventas_mes as $venta) {
+      $monto_mes = $monto_mes + $venta->cantidad*$venta->monto_venta;
+    }
+
     return response()->json([
           'cantidad_total' => $cantidad,
-          'monto_total'=>$monto_dia,
+          'monto_dia'=>$monto_dia,
+          'monto_mes'=>$monto_dia,
           'boletas'=>$boletas,
           'detalle' => ApiAnswer::collection($ventas),
         ]);
