@@ -101,7 +101,7 @@ class ApiController extends Controller
     return response()->json([
           'cantidad_total' => $cantidad,
           'monto_dia'=>$monto_dia,
-          'monto_mes'=>$monto_dia,
+          'monto_mes'=>$monto_mes,
           'boletas'=>$boletas,
           'detalle' => ApiAnswer::collection($ventas),
         ]);
