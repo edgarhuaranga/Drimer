@@ -90,6 +90,7 @@
                                                       <th class="d-none d-sm-table-cell" style="width: 15%;">Cadena</th>
                                                       <th class="d-none d-sm-table-cell" style="width: 15%;">Tienda</th>
                                                       <th class="d-none d-sm-table-cell" style="width: 15%;">Fecha ingreso</th>
+                                                      <th class="d-none d-sm-table-cell" style="width: 15%;">Rol</th>
                                                   </tr>
                                               </thead>
                                               <tbody>
@@ -109,6 +110,9 @@
                                                       </td>
                                                       <td>
                                                         {{$promotor->fecha_ingreso}}
+                                                      </td>
+                                                      <td>
+                                                        {{$promotor->rol}}
                                                       </td>
                                                   </tr>
                                                   @endforeach
