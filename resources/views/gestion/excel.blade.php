@@ -21,6 +21,7 @@
     <th class="text-center">PVP regular</th>
     <th class="text-center">PVP Real</th>
     <th class="text-center">Total</th>
+    <th class="text-center">Origen</th>
 
   </tr>
   </thead>
@@ -81,10 +82,9 @@
       <td class="d-none d-sm-table-cell text-center">
         {{$venta->monto_venta*$venta->cantidad}}
       </td>
-
-
-
-
+      <td class="d-none d-sm-table-cell text-center">
+        {{$venta->origen}}
+      </td>
 
     </tr>
     @endforeach
