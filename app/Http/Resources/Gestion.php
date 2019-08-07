@@ -30,6 +30,7 @@ class Gestion extends JsonResource
         'cantidad' => $this->cantidad,
         'monto_unitario' => $this->monto_venta,
         'boleta' => $this->boleta,
+        'origen' => $this->origen,
       ];
     }
 }
