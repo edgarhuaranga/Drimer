@@ -21,7 +21,7 @@ class GestionController extends Controller
 
     public function index()
     {
-        $ventas = Gestion::all();
+        $ventas = Gestion::whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()])->get();
 
         return view('gestion.index', compact('ventas'));
     }

@@ -82,12 +82,11 @@
                                           <table class="table table-bordered table-striped table-vcenter js-dataTable-buttons">
                                               <thead>
                                                   <tr>
-                                                      <th class="text-center" style="width: 80px;">#</th>
-                                                      <th class="d-none d-sm-table-cell" style="width: 15%;">Cadena</th>
-                                                      <th class="d-none d-sm-table-cell" style="width: 15%;">Nombre sede</th>
-                                                      <th class="d-none d-sm-table-cell" style="width: 15%;">Direccion</th>
-                                                      <th class="d-none d-sm-table-cell" style="width: 15%;">Ubigeo</th>
-                                                      <th class="d-none d-sm-table-cell" style="width: 15%;">Accion</th>
+                                                      <th class="d-none d-sm-table-cell" style="width: 10%">#</th>
+                                                      <th class="d-none d-sm-table-cell" style="width: 20%;">Cadena</th>
+                                                      <th class="d-none d-sm-table-cell" style="width: 30%;">Nombre sede</th>
+                                                      <th class="d-none d-sm-table-cell" style="width: 30%;">Direccion</th>
+                                                      <th class="d-none d-sm-table-cell" style="width: 10%;">Detalle</th>
                                                   </tr>
                                               </thead>
                                               <tbody>
@@ -105,13 +104,13 @@
                                                       <td class="font-w600">
                                                           {{$tienda->direccion}}
                                                       </td>
-                                                      <td class="font-w600">
-                                                          {{$tienda->ubigeo}}
-                                                      </td>
+
                                                       <td class="text-center">
                                                         <div class="btn-group">
-                                                            <button type="button" class="btn btn-sm btn-primary js-tooltip-enabled" data-toggle="tooltip" title="" data-original-title="Edit">
-                                                                <i class="fa fa-pencil-alt"></i>
+                                                            <button type="button" class="btn btn-sm btn-outline-primary js-tooltip-enabled" data-toggle="tooltip" title="" data-original-title="Edit">
+                                                                <a href="/tiendas/{{$tienda->id}}">
+                                                                  <i class="fa fa-chart-bar"></i>
+                                                                </a>
                                                             </button>
                                                         </div>
                                                       </td>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Tienda;
 use App\Cadena;
+use App\Gestion;
 use Illuminate\Http\Request;
 
 class TiendaController extends Controller
@@ -42,7 +43,6 @@ class TiendaController extends Controller
      */
     public function store(Request $request)
     {
-        dump($request);
         $tienda = new Tienda();
         $tienda->cadena_id = request('cadena_id');
         $tienda->nombre_sede = request('nombre_sede');
@@ -60,7 +60,9 @@ class TiendaController extends Controller
      */
     public function show(Tienda $tienda)
     {
-        //
+        $ventas = Gestion::where('tienda_id', $tienda->id)->get();
+        $cadenas = Cadena::all();
+        return view('tienda.show', compact('tienda', 'ventas', 'cadenas'));
     }
 
     /**

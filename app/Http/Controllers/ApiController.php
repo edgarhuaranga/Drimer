@@ -65,6 +65,7 @@ class ApiController extends Controller
     $gestion->cantidad= request('cantidad');
     $gestion->monto_venta= request('monto_venta');
     $gestion->boleta= request('boleta');
+    $gestion->origen = request('origen');
 
     $status = $gestion->save();
 

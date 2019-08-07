@@ -5,7 +5,12 @@ namespace App\Http\Controllers;
 use App\Promotor;
 use App\Cadena;
 use App\Tienda;
-
+use App\Gestion;
+use Carbon\Carbon;
+use Carbon\CarbonPeriod;
+use Maatwebsite\Excel\Concerns\FromView;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\PromotorsImport;
 use Illuminate\Http\Request;
 
 class PromotorController extends Controller
@@ -34,7 +39,7 @@ class PromotorController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -64,7 +69,9 @@ class PromotorController extends Controller
      */
     public function show(Promotor $promotor)
     {
-        //
+      $tiendas = Tienda::all();
+      $ventas = Gestion::where('promotor_id', $promotor->id)->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()])->orderBy('created_at', 'desc')->get();
+      return view('promotor.show', compact('promotor', 'tiendas', 'ventas'));
     }
 
     /**
@@ -75,7 +82,8 @@ class PromotorController extends Controller
      */
     public function edit(Promotor $promotor)
     {
-        //
+        dump($promotor);
+        return view('promotor.edit', compact('promotor'));
     }
 
     /**
@@ -100,4 +108,15 @@ class PromotorController extends Controller
     {
         //
     }
+
+    public function import(){
+      return view('promotor.import');
+    }
+
+    public function importarExcel(Request $request){
+        Excel::import(new PromotorsImport, request('file'));
+
+        return back();
+    }
+
 }

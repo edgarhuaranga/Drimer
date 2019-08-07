@@ -29,4 +29,10 @@ class Gestion extends Model
       return $this->created_at->format('H:i:s');
     }
 
+    public function fechaHora(){
+      return $this->created_at->format('d/m/Y H:i');
+    }
+
+
+
 }

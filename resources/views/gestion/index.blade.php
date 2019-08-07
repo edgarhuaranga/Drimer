@@ -7,6 +7,24 @@
             <h1 class="flex-sm-fill font-size-h2 font-w400 mt-2 mb-0 mb-sm-2">Ventas</h1>
             <a href="/exportarventas"> Exportar a excel</a>
         </div>
+        <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+
+            <form method="GET" class="form-inline" action="/exportarventas">
+              <div class="form-group">
+                  <label for="text-input-password">Fecha inicio</label>
+                  <input type="date" class="form-control" id="fecha_inicio" name="fecha_inicio">
+              </div>
+              <div class="form-group">
+                  <label for="text-input-password">Fecha fin</label>
+                  <input type="date" class="form-control" id="fecha_fin" name="fecha_fin">
+              </div>
+              <div class="block-options" align="center">
+                  <button type="submit" class="btn btn-sm btn-outline-primary" >
+                      <i class="fa fa-check"></i> Exportar
+                  </button>
+              </div>
+            </form>
+        </div>
     </div>
 </div>
 <!-- END Hero -->

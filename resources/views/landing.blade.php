@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Hero -->
-    <div class="bg-image" style="background-image: url('{{ asset('media/photos/photo15@2x.jpg') }}');">
+    <div class="bg-image" style="background-image: url('{{ asset('media/photos/fondo_drimer.jpg') }}');">
         <div class="hero bg-white overflow-hidden">
             <div class="hero-inner">
                 <div class="content content-full text-center">

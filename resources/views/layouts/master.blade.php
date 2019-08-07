@@ -41,7 +41,6 @@
                         </button>
                         <!-- END Toggle Sidebar -->
 
-
                     </div>
                     <!-- END Left Section -->
 
@@ -110,6 +109,17 @@
         <!-- Page JS Code -->
         <script src="/js/pages/be_tables_datatables.min.js"></script>
 
+        <script src="/js/dashmix.app.min.js"></script>
+
+        <!-- Page JS Plugins -->
+        <script src="/js/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+        <script src="/js/plugins/chart.js/Chart.bundle.min.js"></script>
+
+        <!-- Page JS Code -->
+        <script src="/js/pages/be_pages_dashboard.min.js"></script>
+
+        <!-- Page JS Helpers (jQuery Sparkline plugin) -->
+        <script>jQuery(function(){ Dashmix.helpers('sparkline'); });</script>
 
     </body>
 </html>

@@ -67,7 +67,59 @@
                                           </div>
                                       </div>
                                       <div class="block-content">
-                                          <p>Resumen.</p>
+                                        <div class="row">
+                                            <div class="col-md-6 col-xl-6 js-appear-enabled animated fadeIn" data-toggle="appear">
+                                              <a class="block block-rounded block-link-pop text-center" href="javascript:void(0)">
+                                                  <div class="block-content block-content-full aspect-ratio-16-9 d-flex justify-content-center align-items-center">
+                                                      <div>
+                                                          <div class="font-size-h4 font-w300 text-black">{{$cadena->resumen()['q_hoy']}}</div>
+                                                          <div class="font-size-h5 font-w300 text-black">S/.{{$cadena->resumen()['monto_hoy']}}</div>
+                                                          <div class="font-w600 mt-2 text-uppercase text-muted">Hoy</div>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                            </div>
+                                            <div class="col-md-6 col-xl-6 js-appear-enabled animated fadeIn" data-toggle="appear">
+                                              <a class="block block-rounded block-link-pop text-center" href="javascript:void(0)">
+                                                  <div class="block-content block-content-full aspect-ratio-16-9 d-flex justify-content-center align-items-center">
+                                                      <div>
+                                                          <div class="font-size-h4 font-w300 text-black">{{$cadena->resumen()['q_ayer']}}</div>
+                                                          <div class="font-size-h5 font-w300 text-black">S/.{{$cadena->resumen()['monto_ayer']}}</div>
+                                                          <div class="font-w600 mt-2 text-uppercase text-muted">Ayer</div>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-md-6 col-xl-6 js-appear-enabled animated fadeIn" data-toggle="appear">
+                                              <a class="block block-rounded block-link-pop text-center" href="javascript:void(0)">
+                                                  <div class="block-content block-content-full aspect-ratio-16-9 d-flex justify-content-center align-items-center">
+                                                      <div>
+                                                          <div class="font-size-h4 font-w300 text-black">{{$cadena->resumen()['q_semana']}}</div>
+                                                          <div class="font-size-h5 font-w300 text-black">S/.{{$cadena->resumen()['monto_semana']}}</div>
+                                                          <div class="font-w600 mt-2 text-uppercase text-muted">Semana</div>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                            </div>
+                                            <div class="col-md-6 col-xl-6 js-appear-enabled animated fadeIn" data-toggle="appear">
+                                              <a class="block block-rounded block-link-pop text-center" href="javascript:void(0)">
+                                                  <div class="block-content block-content-full aspect-ratio-16-9 d-flex justify-content-center align-items-center">
+                                                      <div>
+                                                          <div class="font-size-h4 font-w300 text-black">{{$cadena->resumen()['q_mes']}}</div>
+                                                          <div class="font-size-h5 font-w300 text-black">S/.{{$cadena->resumen()['monto_mes']}}</div>
+                                                          <div class="font-w600 mt-2 text-uppercase text-muted">Mes</div>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                            </div>
+
+
+                                        </div>
+
                                       </div>
                                   </div>
                               </div>

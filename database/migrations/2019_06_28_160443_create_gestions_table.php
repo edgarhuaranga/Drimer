@@ -21,6 +21,7 @@ class CreateGestionsTable extends Migration
             $table->integer('cantidad');
             $table->float('monto_venta');
             $table->string('boleta');
+            $table->string('origen');
             $table->timestamps();
         });
     }
