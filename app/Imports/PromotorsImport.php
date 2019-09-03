@@ -3,6 +3,8 @@
 namespace App\Imports;
 
 use App\Promotor;
+use App\Cadena;
+use App\Tienda;
 use Maatwebsite\Excel\Concerns\ToModel;
 use DateTime;
 use Carbon\Carbon;
@@ -17,15 +19,27 @@ class PromotorsImport implements ToModel
     public function model(array $row)
     {
         if(count($row) == 7 ){
-          $promotor = new Promotor([
-              'tienda_id'=>$row[0],
-              'nombre_completo'=>$row[1],
-              'numero_documento'=>$row[2],
-              'fecha_ingreso'=>new Carbon($row[5]."-".$row[4]."-".$row[3]),
-              'rol'=>$row[6],
-          ]);
-          $promotor->save();
-          return $promotor;
+          $descripcion_tienda = explode("-",$row[0]);
+          if(count($descripcion_tienda) == 2){
+            $cadena = Cadena::where('nombre', trim($descripcion_tienda[0]))->first();
+            $tienda = Tienda::where('cadena_id', $cadena->id)->where('nombre_sede', trim($descripcion_tienda[1]))->first();
+            #dump($descripcion_tienda);
+            #dump($row[3]);
+            #dump(date("Y-m-d", ((int)$row[3]))*24*60*60);
+            #$fechainicio = date("Y-m-d", "((int)$row[3])*24*60*60");
+            $fechainicio = (new Carbon(date("Y-m-d", ((int)$row[3])*24*60*60)))->subYears(70);
+            dump($fechainicio);
+            $promotor = new Promotor([
+                'tienda_id'=>$tienda->id,
+                'nombre_completo'=>$row[1],
+                'numero_documento'=>$row[2],
+                'fecha_ingreso'=>$fechainicio,
+                'rol'=>$row[4],
+            ]);
+            $promotor->save();
+            return $promotor;
+          }
+
         }
     }
 }

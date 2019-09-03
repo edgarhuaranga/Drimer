@@ -83,4 +83,14 @@ class ProductoController extends Controller
     {
         //
     }
+
+    public function import(){
+      return view('producto.import');
+    }
+
+    public function importarExcel(Request $request){
+        Excel::import(new ProductosImport, request('file'));
+
+        return back();
+    }
 }

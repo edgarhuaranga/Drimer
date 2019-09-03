@@ -32,16 +32,17 @@
                               <form action="/promotores" method="POST">
                                 {{csrf_field()}}
                                 <h2 class="content-heading pt-0">Nuevo promotor</h2>
+
                                 <div class="row push">
 
                                     <div class="col-lg-8 col-xl-12">
                                         <div class="form-group">
                                             <label for="text-input-name">Nombre completo</label>
-                                            <input type="text" class="form-control" id="nombre_completo" name="nombre_completo">
+                                            <input type="text" class="form-control" id="nombre_completo" name="nombre_completo" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="text-input-document">Nro documento</label>
-                                            <input type="text" class="form-control" id="numero_documento" name="numero_documento">
+                                            <input type="text" class="form-control" id="numero_documento" name="numero_documento" required>
                                         </div>
 
                                         <div class="form-group">
@@ -54,11 +55,14 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="text-input-password">Fecha de ingreso</label>
-                                            <input type="date" class="form-control" id="fecha_ingreso" name="fecha_ingreso">
+                                            <input type="date" class="form-control" id="fecha_ingreso" name="fecha_ingreso" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="text-input-document">Rol</label>
-                                            <input type="text" class="form-control" id="rol" name="rol">
+                                            <select class="form-control" id="rol" name="rol">
+                                              <option value="Asesor titular" selected >Asesor titular</option>
+                                              <option value="Asesor volante">Asesor volante</option>
+                                            </select>
                                         </div>
                                         <div class="block-options" align="center">
                                             <button type="submit" class="btn btn-sm btn-outline-primary" >

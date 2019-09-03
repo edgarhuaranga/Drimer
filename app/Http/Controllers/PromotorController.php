@@ -12,6 +12,7 @@ use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\PromotorsImport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PromotorController extends Controller
 {
@@ -50,6 +51,7 @@ class PromotorController extends Controller
      */
     public function store(Request $request)
     {
+
         $promotor = new Promotor;
         $promotor->tienda_id = request('tienda_id');
         $promotor->nombre_completo = request('nombre_completo');
@@ -57,7 +59,6 @@ class PromotorController extends Controller
         $promotor->fecha_ingreso = request('fecha_ingreso');
         $promotor->rol = request('rol');
         $promotor->save();
-
         return redirect('/promotores');
     }
 

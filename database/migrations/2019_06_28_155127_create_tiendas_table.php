@@ -18,9 +18,9 @@ class CreateTiendasTable extends Migration
             $table->string('cadena_id');
             $table->string('nombre_sede');
             $table->string('direccion');
-            $table->string('ubigeo');
-            #$table->string('provincia');
-            #$table->string('distrito');
+            $table->string('departamento');
+            $table->string('provincia');
+            $table->string('distrito');
             $table->timestamps();
         });
     }
