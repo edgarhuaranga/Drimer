@@ -97,6 +97,16 @@ class PromotorController extends Controller
     public function update(Request $request, Promotor $promotor)
     {
         //
+        #dump($promotor);
+        #dump($request);
+        $promotor->tienda_id = request('tienda_id');
+        $promotor->nombre_completo = request('nombre_completo');
+        $promotor->numero_documento = request('numero_documento');
+        $promotor->fecha_ingreso = request('fecha_ingreso');
+        $promotor->rol = request('rol');
+        $promotor->save();
+
+        return redirect('/promotores');
     }
 
     /**

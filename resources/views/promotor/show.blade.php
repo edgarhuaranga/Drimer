@@ -57,7 +57,7 @@
                             <!-- Side Content -->
                             <div id="side-content" class="d-none d-md-block push">
 
-                              <form action="/promotores/{{$promotor->id}}/edit" method="PUT">
+                              <form action="/promotores/{{$promotor->id}}/actualizar" method="POST">
                                 {{csrf_field()}}
                                 <h2 class="content-heading pt-0">Actualizar</h2>
                                 <div class="row push">
