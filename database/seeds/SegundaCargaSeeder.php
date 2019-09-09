@@ -7,7 +7,7 @@ use App\Tienda;
 use Faker\Factory;
 use App\Producto;
 
-class CadenasTableSeeder extends Seeder
+class SegundaCargaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
