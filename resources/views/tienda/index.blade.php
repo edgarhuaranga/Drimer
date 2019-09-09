@@ -54,8 +54,16 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="text-input-password">Ubigeo</label>
-                                            <input type="text" class="form-control" id="ubigeo" name="ubigeo">
+                                            <label for="text-input-password">Departamento</label>
+                                            <input type="text" class="form-control" id="departamento" name="departamento">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="text-input-password">Provincia</label>
+                                            <input type="text" class="form-control" id="provincia" name="provincia">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="text-input-password">Distrito</label>
+                                            <input type="text" class="form-control" id="distrito" name="distrito">
                                         </div>
                                         <div class="block-options" align="center">
                                             <button type="submit" class="btn btn-sm btn-outline-primary" >

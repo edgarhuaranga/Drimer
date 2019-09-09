@@ -60,8 +60,8 @@
                                         <div class="form-group">
                                             <label for="text-input-document">Rol</label>
                                             <select class="form-control" id="rol" name="rol">
-                                              <option value="Asesor titular" selected >Asesor titular</option>
-                                              <option value="Asesor volante">Asesor volante</option>
+                                              <option value="Promotor" selected >Promotor</option>
+                                              <option value="Promotor volante">Promotor volante</option>
                                             </select>
                                         </div>
                                         <div class="block-options" align="center">

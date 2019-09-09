@@ -47,7 +47,9 @@ class TiendaController extends Controller
         $tienda->cadena_id = request('cadena_id');
         $tienda->nombre_sede = request('nombre_sede');
         $tienda->direccion= request('direccion');
-        $tienda->ubigeo = request('ubigeo');
+        $tienda->departamento = request('departamento');
+        $tienda->provincia = request('provincia');
+        $tienda->distrito = request('distrito');
         $tienda->save();
         return redirect('/tiendas');
     }
