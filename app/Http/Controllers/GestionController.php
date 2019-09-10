@@ -101,7 +101,11 @@ class GestionController extends Controller
 
     public function excel(){
       //return view('gestion.index');
+      #dump(request('fecha_inicio'));
+      #dump(request('fecha_fin'));
       $hoy = Carbon::now()->toDateTimeString();
-      return Excel::download(new GestionVentasExport, 'ReporteVentas'.$hoy.'.xlsx');
+      $data = Gestion::whereBetween('created_at', [request('fecha_inicio'), request('fecha_fin')])->get();
+      #dd($data);
+      return Excel::download(new GestionVentasExport('gestion.excel', $data), 'ReporteVentas'.$hoy.'.xlsx');
     }
 }
