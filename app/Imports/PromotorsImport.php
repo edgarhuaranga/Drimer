@@ -23,7 +23,7 @@ class PromotorsImport implements ToModel
           if(count($descripcion_tienda) == 2){
             $cadena = Cadena::where('nombre', trim($descripcion_tienda[0]))->first();
             $tienda = Tienda::where('cadena_id', $cadena->id)->where('nombre_sede', trim($descripcion_tienda[1]))->first();
-            #dump($descripcion_tienda);
+            dump($descripcion_tienda);
             #dump($row[3]);
             #dump(date("Y-m-d", ((int)$row[3]))*24*60*60);
             #$fechainicio = date("Y-m-d", "((int)$row[3])*24*60*60");
