@@ -18,7 +18,7 @@ class PromotorsImport implements ToModel
     */
     public function model(array $row)
     {
-        if(count($row) == 7 ){
+        if(count($row) == 5 ){
           $descripcion_tienda = explode("-",$row[0]);
           if(count($descripcion_tienda) == 2){
             $cadena = Cadena::where('nombre', trim($descripcion_tienda[0]))->first();
