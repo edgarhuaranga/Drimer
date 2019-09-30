@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Producto;
+use App\Cadena;
 use Illuminate\Http\Request;
 
 class ProductoController extends Controller
@@ -15,7 +16,9 @@ class ProductoController extends Controller
     public function index()
     {
       $productos = Producto::all();
-      return view('producto.index', compact('productos'));
+      $cadenas = Cadena::all();
+
+      return view('producto.index', compact('productos', 'cadenas'));
     }
 
     /**
@@ -37,6 +40,20 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         //
+        #dump($request);
+        $tienda = new Producto();
+        $tienda->cadena_id = request('cadena_id');
+        $tienda->sku_cic = request('sku_cic');
+        $tienda->sku= request('sku');
+        $tienda->categoria = request('categoria');
+        $tienda->marca = request('marca');
+        $tienda->nombre = request('nombre');
+        $tienda->descripcion = request('descripcion');
+        $tienda->precio = request('precio');
+        $tienda->UNIDAD = request('unidad');
+
+        $tienda->save();
+        return redirect('/productos');
     }
 
     /**
