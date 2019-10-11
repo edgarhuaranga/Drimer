@@ -45,35 +45,35 @@
                               </div>
                               <div class="form-group">
                                 <label for="text-input-name">SKU CIC</label>
-                                <input type="text" class="form-control" id="codigo" name="sku_cic">
+                                <input required type="text" class="form-control" id="codigo" name="sku_cic">
                               </div>
                               <div class="form-group">
                                 <label for="text-input-name">SKU</label>
-                                <input type="text" class="form-control" id="codigo" name="sku">
+                                <input required type="text" class="form-control" id="codigo" name="sku">
                               </div>
                               <div class="form-group">
                                 <label for="text-input-document">Categoria</label>
-                                <input type="text" class="form-control" id="categoria" name="categoria">
+                                <input required type="text" class="form-control" id="categoria" name="categoria">
                               </div>
                               <div class="form-group">
                                 <label for="text-input-phone">Marca</label>
-                                <input type="text" class="form-control" id="name" name="marca">
+                                <input required type="text" class="form-control" id="name" name="marca">
                               </div>
                               <div class="form-group">
                                 <label for="text-input-phone">Nombre</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre">
+                                <input required type="text" class="form-control" id="nombre" name="nombre">
                               </div>
                               <div class="form-group">
                                 <label for="text-input-phone">Descripcion</label>
-                                <input type="text" class="form-control" id="descripcion" name="descripcion">
+                                <input required type="text" class="form-control" id="descripcion" name="descripcion">
                               </div>
                               <div class="form-group">
                                 <label for="text-input-phone">Precio</label>
-                                <input type="text" class="form-control" id="precio" name="precio">
+                                <input required type="text" class="form-control" id="precio" name="precio">
                               </div>
                               <div class="form-group">
                                 <label for="text-input-address">UNIDAD</label>
-                                <input type="text" class="form-control" id="unidad" name="UNIDAD">
+                                <input required type="text" class="form-control" id="unidad" name="UNIDAD">
                               </div>
 
                               <div class="block-options" align="center">

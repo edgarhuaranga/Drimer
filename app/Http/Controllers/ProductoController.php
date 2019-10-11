@@ -40,7 +40,7 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         //
-        #dump($request);
+        //dump($request);
         $tienda = new Producto();
         $tienda->cadena_id = request('cadena_id');
         $tienda->sku_cic = request('sku_cic');
@@ -50,7 +50,7 @@ class ProductoController extends Controller
         $tienda->nombre = request('nombre');
         $tienda->descripcion = request('descripcion');
         $tienda->precio = request('precio');
-        $tienda->UNIDAD = request('unidad');
+        $tienda->UNIDAD = request('UNIDAD');
 
         $tienda->save();
         return redirect('/productos');
