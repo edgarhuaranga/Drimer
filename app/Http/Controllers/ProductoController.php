@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Producto;
 use App\Cadena;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Concerns\FromView;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\ProductosImport;
+use Illuminate\Support\Facades\Validator;
 
 class ProductoController extends Controller
 {

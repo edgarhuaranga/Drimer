@@ -6,6 +6,10 @@ use App\Tienda;
 use App\Cadena;
 use App\Gestion;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Concerns\FromView;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\TiendasImport;
+use Illuminate\Support\Facades\Validator;
 
 class TiendaController extends Controller
 {
@@ -99,5 +103,16 @@ class TiendaController extends Controller
     public function destroy(Tienda $tienda)
     {
         //
+    }
+
+    public function import(){
+      return view('tienda.import');
+    }
+
+    public function importarExcel(Request $request){
+
+        Excel::import(new TiendasImport, request('file'));
+
+        return back();
     }
 }

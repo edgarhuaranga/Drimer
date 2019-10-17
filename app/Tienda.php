@@ -10,6 +10,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tienda extends Model
 {
+    protected $fillable = [
+      'cadena_id', 'nombre_sede', 'direccion', 'departamento','provincia', 'distrito'
+    ];
     //
     public function cadena(){
       return Cadena::find($this->cadena_id);

@@ -68,12 +68,12 @@
 
             <li class="nav-main-heading">Carga masiva</li>
             <li class="nav-main-item">
-                <a class="nav-main-link" href="/productos/carga">
+                <a class="nav-main-link" href="/productoscarga">
                     <span class="nav-main-link-name">Carga de productos</span>
                 </a>
             </li>
             <li class="nav-main-item">
-                <a class="nav-main-link" href="/tiendas/carga">
+                <a class="nav-main-link" href="/tiendascarga">
                     <span class="nav-main-link-name">Carga de tiendas</span>
                 </a>
             </li>

@@ -67,9 +67,12 @@ Route::get('/ventas/{gestion}/eliminar', 'GestionController@destroy');
 
 Route::get('/exportarventas', 'GestionController@excel');
 
-Route::get('/productos/carga', 'ProductoController@import');
-Route::get('/tiendas/carga', 'TiendaController@import');
+Route::get('/productoscarga', 'ProductoController@import');
+Route::get('/tiendascarga', 'TiendaController@import');
 Route::get('/promotorescarga', 'PromotorController@import');
 
 Route::post('importar', 'PromotorController@importarExcel');
 Route::post('exportar', 'PromotorController@export');
+
+Route::post('/tiendas/importar', 'TiendaController@importarExcel');
+Route::post('/productos/importar', 'ProductoController@importarExcel');
