@@ -78,13 +78,17 @@ class ApiController extends Controller
 
   public function historico(){
     $promotor = Promotor::find(request('worker_id'));
+    $resumenDiario = request('daily');
+    $resumenDiario = $resumenDiario == 'false' ? $resumenDiario : "true";
+
+
     $boletas = Gestion::selectRaw('boleta, origen, count(id) as items, sum(monto_venta*cantidad) as monto_venta')
                         ->where('promotor_id', $promotor->id)
-                        ->where('created_at', '>',Carbon::today())
+			->where('created_at', '>',$resumenDiario == 'true' ? Carbon::today() : "2019-10-01")
                         ->groupBy(['boleta','origen'])->get();
 
     $ventas = Gestion::where('promotor_id', $promotor->id)
-                        ->where('created_at', '>',Carbon::today())->get();
+                        ->where('created_at', '>', Carbon::today() )->get();
 
     $cantidad = $boletas->count();
     $monto_dia = 0;
