@@ -69,6 +69,8 @@ class ProductoController extends Controller
     public function show(Producto $producto)
     {
         //
+        $cadenas = Cadena::all();
+        return view('producto.show', compact('producto', 'cadenas'));
     }
 
     /**
@@ -91,7 +93,18 @@ class ProductoController extends Controller
      */
     public function update(Request $request, Producto $producto)
     {
-        //
+        $producto->cadena_id = request('cadena_id');
+        $producto->sku_cic = request('sku_cic');
+        $producto->sku= request('sku');
+        $producto->categoria = request('categoria');
+        $producto->marca = request('marca');
+        $producto->nombre = request('nombre');
+        $producto->descripcion = request('descripcion');
+        $producto->precio = request('precio');
+        $producto->UNIDAD = request('UNIDAD');
+
+        $producto->save();
+        return redirect('/productos');
     }
 
     /**

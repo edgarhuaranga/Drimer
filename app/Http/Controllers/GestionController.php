@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Gestion;
+use App\Promotor;
 use App\Exports\GestionVentasExport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Concerns\FromView;
@@ -22,8 +23,9 @@ class GestionController extends Controller
     public function index()
     {
         $ventas = Gestion::whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()])->get();
+        $promotores = Promotor::all();
 
-        return view('gestion.index', compact('ventas'));
+        return view('gestion.index', compact('ventas', 'promotores'));
     }
 
     /**
@@ -104,7 +106,8 @@ class GestionController extends Controller
       #dump(request('fecha_inicio'));
       #dump(request('fecha_fin'));
       $hoy = Carbon::now()->toDateTimeString();
-      $data = Gestion::whereBetween('created_at', [request('fecha_inicio'), request('fecha_fin')])->get();
+      $data = Gestion::where('promotor_id', request('promotor_id'))
+                      ->whereBetween('created_at', [request('fecha_inicio'), request('fecha_fin')])->get();
       #dd($data);
       return Excel::download(new GestionVentasExport('gestion.excel', $data), 'ReporteVentas'.$hoy.'.xlsx');
     }
