@@ -106,7 +106,11 @@ class GestionController extends Controller
       #dump(request('fecha_inicio'));
       #dump(request('fecha_fin'));
       $hoy = Carbon::now()->toDateTimeString();
-      $data = Gestion::where('promotor_id', request('promotor_id'))
+      if(request('promotor_id') == 0){
+        $data = Gestion::whereBetween('created_at', [request('fecha_inicio'), request('fecha_fin')])->get();
+      }
+      else
+        $data = Gestion::where('promotor_id', request('promotor_id'))
                       ->whereBetween('created_at', [request('fecha_inicio'), request('fecha_fin')])->get();
       #dd($data);
       return Excel::download(new GestionVentasExport('gestion.excel', $data), 'ReporteVentas'.$hoy.'.xlsx');
