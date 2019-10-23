@@ -21,7 +21,7 @@
               <div class="form-group">
                 <label for="text-input-password">Usuario</label>
                 <select class="form-control" id="promotor_id" name="promotor_id">
-                    <option value=0>Todos </option>
+                    <option value=0 selected>Todos </option>
                     @foreach($promotores as $usuario)
                         <option value="{{$usuario->id}}">{{$usuario->nombre_completo}}</option>
                     @endforeach
