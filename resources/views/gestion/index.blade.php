@@ -27,6 +27,15 @@
                     @endforeach
                 </select>
               </div>
+              <div class="form-group">
+                <label for="text-input-password">Supervisor</label>
+                <select class="form-control" id="supervisor_id" name="supervisor_id">
+                    <option value=0 selected>Todos </option>
+                    @foreach($supervisores as $supervisor)
+                        <option value="{{$supervisor->id}}">{{$supervisor->nombre_completo}}</option>
+                    @endforeach
+                </select>
+              </div>
               <div class="block-options" align="center">
                   <button type="submit" class="btn btn-sm btn-outline-primary" >
                       <i class="fa fa-check"></i> Exportar

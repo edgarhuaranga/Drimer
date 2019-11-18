@@ -1,4 +1,4 @@
-<?php
+s<?php
 
 namespace App\Http\Controllers;
 use DB;
@@ -84,7 +84,7 @@ class ApiController extends Controller
 
     $boletas = Gestion::selectRaw('boleta, origen, count(id) as items, sum(monto_venta*cantidad) as monto_venta')
                         ->where('promotor_id', $promotor->id)
-			->where('created_at', '>',$resumenDiario == 'true' ? Carbon::today() : "2019-10-01")
+			                  ->where('created_at', '>',$resumenDiario == 'true' ? Carbon::today() : "2019-10-01")
                         ->groupBy(['boleta','origen'])->get();
 
     $ventas = Gestion::where('promotor_id', $promotor->id)

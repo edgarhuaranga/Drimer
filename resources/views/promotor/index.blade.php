@@ -62,6 +62,7 @@
                                             <select class="form-control" id="rol" name="rol">
                                               <option value="Promotor" selected >Promotor</option>
                                               <option value="Promotor volante">Promotor volante</option>
+                                              <option value="Supervisor">Supervisor</option>
                                             </select>
                                         </div>
                                         <div class="block-options" align="center">

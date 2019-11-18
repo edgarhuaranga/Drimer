@@ -23,9 +23,10 @@ class GestionController extends Controller
     public function index()
     {
         $ventas = Gestion::whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()])->get();
-        $promotores = Promotor::all();
+        $promotores = Promotor::where('rol', '<>', 'supervisor')->get();
+        $supervisores = Promotor::where('rol', 'Supervisor')->get();
 
-        return view('gestion.index', compact('ventas', 'promotores'));
+        return view('gestion.index', compact('ventas', 'promotores', 'supervisores'));
     }
 
     /**
@@ -107,12 +108,21 @@ class GestionController extends Controller
       #dump(request('fecha_fin'));
       $hoy = Carbon::now()->toDateTimeString();
       if(request('promotor_id') == 0){
-        $data = Gestion::whereBetween('created_at', [request('fecha_inicio'), request('fecha_fin')])->get();
+        if(request('supervisor_id') == 0){
+          $data = Gestion::whereBetween('created_at', [request('fecha_inicio'), request('fecha_fin')])->get();
+        }
+        else{
+          $supervisor = Promotor::find(request('supervisor_id'));
+          $data = Gestion::whereBetween('created_at', [request('fecha_inicio'), request('fecha_fin')])
+                            ->where('tienda_id', $supervisor->tienda_id)->get();
+        }
       }
       else
         $data = Gestion::where('promotor_id', request('promotor_id'))
                       ->whereBetween('created_at', [request('fecha_inicio'), request('fecha_fin')])->get();
       #dd($data);
+
+
       return Excel::download(new GestionVentasExport('gestion.excel', $data), 'ReporteVentas'.$hoy.'.xlsx');
     }
 }
