@@ -34,7 +34,7 @@ class Gestion extends Model
     }
 
     public function supervisor(){
-      return Promotor::where('tienda_id', $this->id)->where('rol', 'Supervisor')->last();
+      return Promotor::where('tienda_id', $this->id)->where('rol', 'Supervisor')->orderBy('id', 'desc')->first();
     }
 
 
