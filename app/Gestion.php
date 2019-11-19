@@ -33,6 +33,9 @@ class Gestion extends Model
       return $this->created_at->format('d/m/Y H:i');
     }
 
+    public function supervisor(){
+      return Promotor::where('tienda_id', $this->id)->where('rol', 'Supervisor')->last();
+    }
 
 
 }
