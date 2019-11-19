@@ -42,6 +42,7 @@
           Sin supervisor asignado
         @else
           {{$venta->supervisor()->nombre_completo}}
+        @endif
       </td>
       <td class="d-none d-sm-table-cell text-center">
         {{$venta->promotor()->numero_documento}}
