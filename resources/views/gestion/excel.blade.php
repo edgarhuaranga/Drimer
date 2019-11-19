@@ -38,7 +38,10 @@
         {{$venta->hora()}}
       </td>
       <td class="d-none d-sm-table-cell text-center">
-        {{$venta->supervisor()->nombre_completo}}
+        @if(is_null($venta->supervisor()))
+          Sin supervisor asignado
+        @else
+          {{$venta->supervisor()->nombre_completo}}
       </td>
       <td class="d-none d-sm-table-cell text-center">
         {{$venta->promotor()->numero_documento}}
