@@ -29,6 +29,9 @@ class PromotorsImport implements ToModel
             #$fechainicio = date("Y-m-d", "((int)$row[3])*24*60*60");
             $fechainicio = (new Carbon(date("Y-m-d", ((int)$row[3])*24*60*60)))->subYears(70);
             #dump($fechainicio);
+            if(is_null($tienda)){
+              dump($descripcion_tienda);
+            }
             $promotor = new Promotor([
                 'tienda_id'=>$tienda->id,
                 'nombre_completo'=>$row[1],
