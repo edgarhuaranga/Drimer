@@ -23,7 +23,7 @@ class TiendasImport implements ToModel
         $departamento = trim($row[3]);
         $provincia = trim($row[4]);
         $distrito = trim($row[5]);
-        dump($cadena);
+        
         $tienda = new Tienda([
                 'cadena_id'=>$cadena->id,
                 'nombre_sede'=>$nombre_sede,
