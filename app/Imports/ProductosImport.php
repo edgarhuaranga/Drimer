@@ -38,7 +38,7 @@ class ProductosImport implements ToModel
         'precio' =>$precio,
         'UNIDAD' =>$UNIDAD,
       ]);
-      dump($producto);
+      #dump($producto);
       $producto->save();
       //dump($tienda);
       return $producto;
