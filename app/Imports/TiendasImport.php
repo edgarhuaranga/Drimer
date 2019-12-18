@@ -15,7 +15,7 @@ class TiendasImport implements ToModel
     */
     public function model(array $row)
     {
-        dump($row);
+        #dump($row);
 
         $cadena = Cadena::where('nombre', trim($row[0]))->first();
         $nombre_sede = trim($row[1]);
@@ -23,7 +23,7 @@ class TiendasImport implements ToModel
         $departamento = trim($row[3]);
         $provincia = trim($row[4]);
         $distrito = trim($row[5]);
-
+        dump($cadena);
         $tienda = new Tienda([
                 'cadena_id'=>$cadena->id,
                 'nombre_sede'=>$nombre_sede,
